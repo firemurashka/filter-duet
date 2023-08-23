@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Фильтр</title>
+        <link rel="stylesheet" href="css/style.css">
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:regular,500,600,700,900&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width , initial-scale=1.0">
+        <script src="/media/vendor/jquery/js/jquery.min.js?3.6.3"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <main class="page">
+                <!-- основной фильтр -->
+                <div class="filters">
+                    <div class="filters__list">
+                        <div class="filter-block">
+                            <!-- Стиль -->
+                            <div class="dropdown" id="dropdown-style">
+                                <div class="dropdown__label">
+                                    <span>
+                                        Стиль
+                                    </span>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="14"
+                                        height="9"
+                                        viewBox="0 0 14 9"
+                                        fill="none"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            clip-rule="evenodd"
+                                            d="M6.95703 8.6751L13.5511 2.08105L12.349 0.878967L6.96488 6.2631L1.65422 0.882887L0.444336 2.07713L6.95703 8.6751Z"
+                                            fill="#282D3C"
+                                        />
+                                    </svg>
+                                </div>
+                                <div class="dropdown-content dropdown-content_style" id="dropdown-content-style">
+                                    <button value="modern" class="filters__list-item  modern">
+                                        Современный
+                                    </button>
+                                    <button value="classic" class="filters__list-item  classic">
+                                        Классический
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Цвет -->
+                            <div class="dropdown" id="dropdown-color">
+                                <div class="dropdown__label">
+                                    <span>
+                                        Цвет
+                                    </span>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="14"
+                                        height="9"
+                                        viewBox="0 0 14 9"
+                                        fill="none"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            clip-rule="evenodd"
+                                            d="M6.95703 8.6751L13.5511 2.08105L12.349 0.878967L6.96488 6.2631L1.65422 0.882887L0.444336 2.07713L6.95703 8.6751Z"
+                                            fill="#282D3C"
+                                        />
+                                    </svg>
+                                </div>
+                                <div class="dropdown-content dropdown-content_color" id="dropdown-content-color">
+                                    <button value="bright" class="filters__list-item  bright">
+                                        яркая
+                                    </button>
+                                    <button value="light" class="filters__list-item  light">
+                                        светлая
+                                    </button>
+                                    <button value="dark" class="filters__list-item  dark">
+                                        темная
+                                    </button>
+                                    <button value="woodtexture" class="filters__list-item  woodtexture">
+                                        древесная фактура
+                                    </button>
+                                    <button value="stonetexture" class="filters__list-item  stonetexture">
+                                        каменная фактура
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Конфигурация -->
+                            <div class="dropdown" id="dropdown-config">
+                                <div class="dropdown__label">
+                                    <span>
+                                        Конфигурация
+                                    </span>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="14"
+                                        height="9"
+                                        viewBox="0 0 14 9"
+                                        fill="none"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            clip-rule="evenodd"
+                                            d="M6.95703 8.6751L13.5511 2.08105L12.349 0.878967L6.96488 6.2631L1.65422 0.882887L0.444336 2.07713L6.95703 8.6751Z"
+                                            fill="#282D3C"
+                                        />
+                                    </svg>
+                                </div>
+                                <div class="dropdown-content dropdown-content_config" id="dropdown-content-config">
+                                    <button value="straight" class="filters__list-item  straight">
+                                        Прямая
+                                    </button>
+                                    <button value="angular" class="filters__list-item  angular">
+                                        Угловая
+                                    </button>
+                                    <button value="figurative" class="filters__list-item  figurative">
+                                        П-образная
+                                    </button>
+                                    <button value="island" class="filters__list-item  island">
+                                        С островом
+                                    </button>
+                                    <button value="bar" class="filters__list-item  bar">
+                                        С барной стойкой
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Дизайн -->
+                            <div class="dropdown" id="dropdown-design">
+                                <div class="dropdown__label">
+                                    <span>
+                                        Дизайн
+                                    </span>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="14"
+                                        height="9"
+                                        viewBox="0 0 14 9"
+                                        fill="none"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            clip-rule="evenodd"
+                                            d="M6.95703 8.6751L13.5511 2.08105L12.349 0.878967L6.96488 6.2631L1.65422 0.882887L0.444336 2.07713L6.95703 8.6751Z"
+                                            fill="#282D3C"
+                                        />
+                                    </svg>
+                                </div>
+                                <div class="dropdown-content dropdown-content_design" id="dropdown-content-design">
+                                    <button value="withhandles" class="filters__list-item  withhandles">
+                                        с ручками
+                                    </button>
+                                    <button value="withouthandles" class="filters__list-item  withouthandles">
+                                        без ручек
+                                    </button>
+                                    <button value="mezzanines" class="filters__list-item  mezzanines">
+                                        с антресолями
+                                    </button>
+                                    <button value="backlit" class="filters__list-item backlit">
+                                        с подсветкой
+                                    </button>
+                                </div>
+                            </div>
+                            <button class="filters__btn-form filters__reset">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="10"
+                                    height="10"
+                                    viewBox="0 0 10 10"
+                                    fill="none"
+                                >
+                                    <path d="M1.02075 9L8.90677 1.07247" stroke="#8C94A8" stroke-linecap="round"/>
+                                    <path d="M1.02075 9L8.90677 1.07247" stroke="#8C94A8" stroke-linecap="round"/>
+                                    <path d="M1.02075 9L8.90677 1.07247" stroke="#8C94A8" stroke-linecap="round"/>
+                                    <path d="M1 0.825623L9.06567 8.5703" stroke="#8C94A8" stroke-linecap="round"/>
+                                    <path d="M1 0.825623L9.06567 8.5703" stroke="#8C94A8" stroke-linecap="round"/>
+                                    <path d="M1 0.825623L9.06567 8.5703" stroke="#8C94A8" stroke-linecap="round"/>
+                                </svg>
+                                <span>Сбросить фильтр</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="uk-grid _container">
+                    <div class="uk-grid-margin modern bright straight withouthandles" data-tag="modern bright straight withouthandles"></div>
+                    <div class="uk-grid-margin figurative modern light withhandles" data-tag="figurative modern light withhandles"></div>
+                    <div class="uk-grid-margin figurative modern dark backlit" data-tag="figurative modern dark backlit"></div>
+                    <div class="uk-grid-margin bar modern bright withhandles" data-tag="bar modern bright withhandles"></div>
+                    <div class="uk-grid-margin" data-tag="figurative modern dark backlit"></div>
+                    <div class="uk-grid-margin" data-tag="modern stonetexture straight"></div>
+                    <div class="uk-grid-margin" data-tag="bar modern light mezzanines"></div>
+                    <div class="uk-grid-margin" data-tag="angular classic stonetexture"></div>
+                    <div class="uk-grid-margin" data-tag="island classic woodtexture"></div>
+                    <div class="uk-grid-margin" data-tag="classic stonetexture straight mezzanines"></div>
+                    <div class="uk-grid-margin" data-tag="angular classic light withouthandles"></div>
+                    <div class="uk-grid-margin" data-tag="angular classic woodtexture"></div>
+                    <div class="uk-grid-margin" data-tag="figurative classic bright mezzanines"></div>
+                    <div class="uk-grid-margin" data-tag="classic woodtexture straight"></div>
+                    <div class="uk-grid-margin" data-tag="island classic dark withhandles"></div>
+                </div>
+            </main>
+            <footer class="footer"></footer>
+        </div>
+        <script src=" js/script.js"></script>
+    </body>
+</html>

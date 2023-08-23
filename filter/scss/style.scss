@@ -1,0 +1,243 @@
+@import "nullstyle.scss";
+
+html,
+body {
+	height: 100%;
+	line-height: 1;
+	font-size: 14px;
+	font-weight: 500;
+	color: #252b42;
+	background: #fafafa;
+	//шрифт по умолчанию
+	//если шрифт из 2 и более слов то в " "
+	font-family: Montserrat;
+}
+
+/*---------------------------------------------------------------------------------*/
+.wrapper {
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+/*---------------------------------------------------------------------------------*/
+//технический класс, не являестся БЭМблоком, который содержит общие стили
+//ограничивающий контейнер
+._container {
+	max-width: 1046px;
+	margin: 0px auto;
+	//чтобы не было прилипания делаем отступы по крыям и не учитываем их для расчета контейнера
+	padding: 0px 15px;
+	box-sizing: content-box;
+}
+
+._ibg {
+	position: relative;
+}
+
+._ibg img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	object-fit: cover;
+}
+
+.uk-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	gap: 20px;
+
+}
+
+.uk-grid-margin {
+	color: #013C9B;
+	background-color: #a45757;
+	width: 200px;
+	height: 200px;
+	margin: 10px;
+	&.bright{
+		background-color: #ecaaaa;
+
+	}
+
+}
+
+/*====================================================================================================================*/
+
+.filter-block {
+	display: flex;
+	gap: 30px;
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown__label {
+	position: relative;
+	z-index: 11;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-radius: 30px;
+	border-radius: 30px;
+	border: 1px solid #8C94A8;
+	width: 236px;
+	height: 60px;
+	padding: 19.5px 25px;
+	font-size: 16px;
+	font-weight: 400;
+	background-color: #fff;
+}
+
+.dropdown__label:hover {
+	border: 1px solid #013C9B;
+
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	min-width: 100%;
+	z-index: 2;
+	left: 0;
+	border-radius: 30px;
+	border: 1px solid #8C94A8;
+	background: #FFF;
+	padding: 71px 0px 24px;
+	transition: all 0.3s ease 0s;
+}
+
+.dropdown-content_style {
+	bottom: -100px;
+}
+
+.dropdown-content_color {
+	bottom: -209px;
+}
+
+.dropdown-content_config {
+	bottom: -209px;
+}
+
+.dropdown-content_design {
+	bottom: -173px;
+}
+
+
+/* фильтр */
+
+
+.filters__list-subtitle {
+	font-family: 'Montserrat';
+	font-weight: 400;
+	font-size: 22px;
+	line-height: 115%;
+	display: flex;
+	align-items: center;
+	color: #013c9b;
+	margin: 35px 0 25px;
+}
+
+.filters__list-wrap {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 22px;
+}
+
+.filters__list-item {
+	display: flex;
+	align-items: center;
+	gap: 7px;
+	width: 100%;
+	text-align: left;
+	border: none;
+	background-color: white;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 2px 24px;
+}
+
+.filters__list-item:not(:last-child) {
+	margin: 0px 0px 13px 0px;
+}
+
+.filters__list-item:hover {
+	background: #E4EDFC;
+	transition: all 0.3s;
+}
+
+.filters__list-item::before {
+	content: "";
+	border-radius: 3px;
+	background: #013C9B;
+	width: 17px;
+	height: 17px;
+}
+
+.filters__list-item.active.filters__list-item::before {
+	background: url("https://kuhniduet.ru/images/catalog/arrow.png") center center no-repeat #013C9B;
+}
+
+
+.filters__reset {
+	color: #8C94A8;
+	font-size: 16px;
+	font-weight: 400;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	background: #fff;
+	display: none;
+	white-space: nowrap;
+}
+
+.filters__reset svg {
+	margin: 0px 8px 0px 0px;
+	width: 8px;
+	height: 8px;
+}
+
+
+.filters__reset.filters__list-item.active {
+	display: block;
+}
+
+ul.el-nav.uk-margin.uk-subnav.uk-subnav-pill {
+	display: none !important;
+}
+
+@media screen and (max-width: 1580px) {
+	.filter-block {
+		gap: 10px;
+	}
+
+	.dropdown__label {
+		width: 178px;
+		font-size: 14px;
+	}
+
+	.filters__list-item {
+		padding: 2px 10px;
+		font-size: 14px;
+	}
+}
+
+@media screen and (max-width: 960px) {
+	.filters__reset span {
+		display: none;
+	}
+
+	.filters__reset svg {
+		margin: 0px 0px 0px 0px;
+		width: 16px;
+		height: 16px;
+	}
+
+}

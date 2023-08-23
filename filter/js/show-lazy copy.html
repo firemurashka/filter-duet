@@ -1,0 +1,32 @@
+<button class="lazy-btn" id="loadMore">Загрузить еще</button>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+    const $cards = $('[data-tag]'); 
+    const showPerClick = 6; 
+    
+    $cards.hide(); 
+
+    function showCards(count) {
+        $cards.slice(0, count).fadeIn(600);
+    }
+
+    showCards(showPerClick); 
+
+    $('#loadMore').on('click', function() { 
+        const currentlyVisible = $cards.filter(':visible').length; 
+
+        showCards(currentlyVisible + showPerClick); 
+
+        $('html, body').animate({
+            scrollTop: $cards.eq(currentlyVisible).offset().top
+        }, 500);
+        
+        // проверяем, все ли карточки уже загружены 
+        if ($cards.length <= currentlyVisible + showPerClick) {
+            // если все карточки загружены, скрываем кнопку
+            $('#loadMore').hide(); 
+        }
+    });
+});
+</script>

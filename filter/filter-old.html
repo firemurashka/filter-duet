@@ -1,0 +1,469 @@
+<style>
+	.overlay {
+	  background: #e1e1e1;
+	  position: fixed;
+	  display: none;
+	  left: 0;
+	  top: 0;
+	  width: 100vw;
+	  height: 100vh;
+	  z-index: 1000;
+	  opacity: 0.5;
+	}
+	
+	.overlay.active,
+	.filters__list.active {
+	  display: block;
+	}
+	
+	.filters__btn {
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  width: 200px;
+	  height: 40px;
+	  background: #013c9b;
+	  border-radius: 40px;
+	  color: #fff;
+	  cursor: pointer;
+	  font-family: 'Montserrat';
+	  font-weight: 400;
+	  font-size: 16px;
+	  line-height: 150%;
+	  transition: all 0.3s;
+	}
+	
+	.filters__btn svg {
+	  margin-right: 10px;
+	}
+	
+	.filters__list {
+	  position: absolute;
+	  display: none;
+	  z-index: 1001;
+	  max-width: 700px;
+	  width: 100%;
+	  top: 270px;
+	  background: #ffffff;
+	  border-radius: 20px;
+	  padding: 45px 35px;
+	}
+	
+	.filters__list-close {
+	  display: flex;
+	  width: fit-content;
+	  cursor: pointer;
+	  position: absolute;
+	  right: 20px;
+	  top: 20px;
+	}
+	
+	.filters__list-title {
+	  font-family: 'Montserrat';
+	  font-weight: 400;
+	  font-size: 30px;
+	  line-height: 110%;
+	  color: #013c9b;
+	  max-width: 440px;
+	}
+	
+	.filters__list-subtitle {
+	  font-family: 'Montserrat';
+	  font-weight: 400;
+	  font-size: 22px;
+	  line-height: 115%;
+	  display: flex;
+	  align-items: center;
+	  color: #013c9b;
+	  margin: 35px 0 25px;
+	}
+	
+	.filters__list-wrap {
+	  display: grid;
+	  grid-template-columns: 1fr 1fr 1fr;
+	  grid-gap: 22px;
+	}
+	
+	.filters__list-item {
+	  width: 100%;
+	  max-width: 100%;
+	  height: 35px;
+	  background: #ffffff;
+	  border: 0.754752px solid #013c9b;
+	  border-radius: 20.8392px;
+	  cursor: pointer;
+	  transition: all 0.3s;
+	  font-family: 'Montserrat';
+	  font-weight: 400;
+	  font-size: 16px;
+	  line-height: 20px;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  color: #013c9b;
+	}
+	
+	.filters__list-item.active {
+	  background: #013c9b;
+	  color: #fff;
+	}
+	
+	.filters__btns {
+	  margin-top: 50px;
+	  display: flex;
+	  align-items: center;
+	  justify-content: start;
+	}
+	
+	.filters__btn-form {
+	  width: 195px;
+	  height: 35px;
+	  border-radius: 20.8392px;
+	  font-family: 'Montserrat';
+	  font-weight: 400;
+	  font-size: 16px;
+	  line-height: 20px;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  outline: none;
+	  border: none;
+	  cursor: pointer;
+	}
+	
+	.filters__submit {
+	  background: #013c9b;
+	  color: #ffffff;
+	  margin-right: 20px;
+	}
+	
+	.filters__reset {
+	  color: #013c9b;
+	  background: #ffffff;
+	  border: 1px solid #013c9b;
+	}
+	
+	@media screen and (min-width: 1200px) {
+	  .filters__btn:hover,
+	  .filters__btn-form:hover {
+		 color: #fff;
+		 background: #00245e;
+		 border: none;
+		 transition: all 0.3s;
+	  }
+	
+	  .filters__list-item:hover {
+		 background: #00245e;
+		 color: #fff;
+		 transition: all 0.3s;
+	  }
+	}
+	
+	@media screen and (max-width: 760px) {
+	  .filters__list {
+		 width: calc(100% - 30px);
+		 top: 170px;
+		 max-width: fit-content;
+	  }
+	
+	  .filters__list-close {
+		 right: 10px;
+		 top: 10px;
+	  }
+	
+	  .filters__btn {
+		 width: 170px;
+		 height: 40px;
+		 font-size: 18px;
+	  }
+	
+	  .filters__list-wrap {
+		 grid-template-columns: 1fr 1fr;
+		 grid-gap: 20px;
+	  }
+	
+	  .filters__list-item {
+		 max-width: 100%;
+	  }
+	
+	  .filters__list-title {
+		 font-size: 27px;
+	  }
+	}
+	
+	@media screen and (max-width: 500px) {
+	  .filters__list {
+		 max-width: 100%;
+		 top: 0;
+		 left: 0;
+		 border-radius: 0;
+		 padding: 45px 20px;
+		 width: 100%;
+		 height: 100%;
+		 overflow: auto;
+		 position: fixed;
+	  }
+	
+	  .filters__list-title {
+		 max-width: 420px;
+	  }
+	
+	  .filters__list-item {
+		 max-width: 100%;
+		 height: 30px;
+		 font-size: 13px;
+	  }
+	
+	  .filters__btn-form {
+		 height: 30px;
+		 font-size: 13px;
+	  }
+	}
+	
+	@media screen and (max-width: 375px) {
+	  .filters__btns {
+		 flex-direction: column;
+	  }
+	
+	  .filters__submit {
+		 margin-right: 0;
+		 margin-bottom: 20px;
+	  }
+	
+	  .filters__list-wrap {
+		 grid-template-columns: 1fr;
+	  }
+	
+	  .filters__list-title {
+		 font-size: 24px;
+	  }
+	
+	  .filters__list-subtitle {
+		 margin: 30px 0 10px;
+	  }
+	
+	  .filters__btn-form {
+		 width: 100%;
+	  }
+	}
+		 
+	ul.el-nav.uk-margin.uk-subnav.uk-subnav-pill {
+		 display:none !important;
+		 }
+</style>
+<div class="filters">
+    <div class="filters__btn">
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-sliders"
+            viewBox="0 0 16 16"
+        >
+            <path fill-rule="evenodd" d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM9.05 3a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0V3h9.05zM4.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM2.05 8a2.5 2.5 0 0 1 4.9 0H16v1H6.95a2.5 2.5 0 0 1-4.9 0H0V8h2.05zm9.45 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-2.45 1a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0v-1h9.05z"/>
+        </svg>
+        Фильтр
+    </div>
+    <div class="overlay"></div>
+    <div class="filters__list">
+        <div class="filters__list-close">
+            <svg
+                width="26"
+                height="26"
+                viewBox="0 0 26 26"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    d="M1.32129 1.8396L24.2444 24.7627"
+                    stroke="#013C9B"
+                    stroke-width="2.08392"
+                    stroke-linecap="round"
+                />
+                <path
+                    d="M1.32129 24.7622L24.2444 1.83913"
+                    stroke="#013C9B"
+                    stroke-width="2.08392"
+                    stroke-linecap="round"
+                />
+            </svg>
+        </div>
+        <div class="filters__list-title">Какую кухню показать вам?</div>
+        <div class="filters__list-subtitle">Стиль</div>
+        <div class="filters__list-wrap filters__list-style">
+            <button value="modern" class="filters__list-item filters__list-style-item sovr">
+                Модерн
+            </button>
+            <button value="modern" class="filters__list-item filters__list-style-item modern">
+                Современный
+            </button>
+            <button value="classic" class="filters__list-item filters__list-style-item classic">
+                Классический
+            </button>
+            <button value="skandinaviya" class="filters__list-item filters__list-style-item skandinaviya">
+                Скандинавский
+            </button>
+            <button value="provencal" class="filters__list-item filters__list-style-item provencal">
+                Прованский
+            </button>
+        </div>
+        <div class="filters__list-subtitle">Конфигурация</div>
+        <div class="filters__list-wrap filters__list-configuration">
+            <button value="figurative" class="filters__list-item filters__list-configuration-item figurative">
+                П-образная
+            </button>
+            <button value="straight" class="filters__list-item filters__list-configuration-item straight">
+                Прямая
+            </button>
+            <button value="angular" class="filters__list-item filters__list-configuration-item angular">
+                Угловая
+            </button>
+            <button value="bar" class="filters__list-item filters__list-configuration-item bar">
+                С барной стойкой
+            </button>
+            <button value="island" class="filters__list-item filters__list-configuration-item island">
+                С островом
+            </button>
+        </div>
+        <div class="filters__btns">
+            <button class="filters__btn-form filters__submit">Применить</button>
+            <button class="filters__btn-form filters__reset">Сбросить</button>
+        </div>
+    </div>
+</div>
+<script>
+			  $(document).ready(function () {
+	  $('div[data-tag]').css('display', 'none');
+	
+	  let params = new URL(document.location).searchParams;
+	  let styleParam = params.get('style');
+	  let configurationsParam = params.get('configurations');
+	
+	  let arr = $('div[data-tag]');
+	  let btnsArr = $('button[value]');
+	
+	  if (styleParam) {
+		 let btn = btnsArr.filter((_, item) => item.value === styleParam);
+		 btn.addClass('active');
+		 arr = arr.filter((_, item) => item.dataset.tag.includes(styleParam) === true);
+	  }
+	
+	  if (configurationsParam) {
+		 let configurArr = configurationsParam.split(',');
+		 const newArr = [];
+	
+		 for (let i = 0; i < configurArr.length; i++) {
+			let btn = btnsArr.filter((_, item) => item.value === configurArr[i]);
+			btn.addClass('active');
+			if (configurArr[i] !== '') {
+			  newArr.push(
+				 arr.filter((_, item) => {
+					if ($(item).data('tag').split(' ').includes(configurArr[i]))
+					  return $(item).css('display', 'flex');
+				 }),
+			  );
+			}
+		 }
+	  } else {
+		 arr.css('display', 'flex');
+	  }
+	
+	  $('.filters__btn').click(function (e) {
+		 e.preventDefault();
+		 $('.overlay').addClass('active');
+		 $('.filters__list').addClass('active');
+	  });
+	
+	  $('.filters__list-close').click(function (e) {
+		 e.preventDefault();
+		 $('.overlay').removeClass('active');
+		 $('.filters__list').removeClass('active');
+	  });
+	
+	  $('.filters__list-style-item').click(function (e) {
+		 e.preventDefault();
+	
+		 if ($(this).hasClass('active')) {
+			$(this).removeClass('active');
+		 } else {
+			$('.filters__list-style-item').removeClass('active');
+			$(this).addClass('active');
+			$('.filters__list-configuration-item').removeClass('active');
+		 }
+	  });
+	
+	  $('.filters__list-configuration-item').click(function (e) {
+		 e.preventDefault();
+		 $(this).toggleClass('active');
+	  });
+	
+	  const url = new URL(window.location);
+	
+	  $('.filters__submit').click(function () {
+		 var styleActive = $('.filters__list-style-item.active');
+		 var configurationActive = $('.filters__list-configuration-item.active');
+		 var arr = $('div[data-tag]');
+		 $('div[data-tag]').css('display', 'none');
+		 let style = null;
+		 let configurationsUrl = '';
+	
+		 if (styleActive.length) {
+			style = replaceText(styleActive[0].className);
+			arr = arr.filter((_, item) => item.dataset.tag.includes(style) === true);
+			url.searchParams.set('style', style);
+		 } else {
+			url.searchParams.delete('style');
+		 }
+	
+		 if (configurationActive.length) {
+			let newArr = [];
+	
+			for (let i = 0; i < configurationActive.length; i++) {
+			  let configuration = replaceText(configurationActive[i].className);
+	
+			  if (i === 0) {
+				 configurationsUrl += configuration;
+			  } else {
+				 configurationsUrl += `,${configuration}`;
+			  }
+	
+			  newArr.push(
+				 arr.filter((_, item) => {
+					if ($(item).data('tag').split(' ').includes(configuration))
+					  return $(item).css('display', 'flex');
+				 }),
+			  );
+			}
+	
+			url.searchParams.set('configurations', configurationsUrl);
+		 } else {
+			url.searchParams.delete('configurations');
+			arr.css('display', 'block');
+		 }
+	
+		 window.history.pushState(null, '', url.toString());
+		 $('.overlay').removeClass('active');
+		 $('.filters__list').removeClass('active');
+	  });
+	
+	  $('.filters__reset').click(function () {
+		 $('.filters__list-style-item').removeClass('active');
+		 $('.filters__list-configuration-item').removeClass('active');
+		 $('.overlay').removeClass('active');
+		 $('.filters__list').removeClass('active');
+		 let newUrl = url.href.split('?');
+		 window.history.pushState(null, '', newUrl[0].toString());
+		 $('div[data-tag]').css('display', 'block');
+	  });
+	});
+	
+	function replaceText(classNameText) {
+	  return classNameText
+		 .replace('filters__list-item', '')
+		 .replace('filters__list-style-item', '')
+		 .replace('filters__list-configuration-item', '')
+		 .replace('active', '')
+		 .trim();
+	}
+</script>
