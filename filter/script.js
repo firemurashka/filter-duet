@@ -16,48 +16,62 @@ $(document).ready(function () {
 	});
 	// Функция фильтрации
 	const applyFilters = function () {
+		setTimeout(function () {
 
-		// Получаем активные кнопки фильтра
-		const activeButtons = $('.filters__list-item.active');
+			// Получаем активные кнопки фильтра
+			const activeButtons = $('.filters__list-item.active');
 
-		// Получаем их значения
-		const activeValues = activeButtons.length > 0 ? Array.from(activeButtons).map(button => button.value) : [];
+			// Получаем их значения
+			const activeValues = activeButtons.length > 0 ? Array.from(activeButtons).map(button => button.value) : [];
 
-		//! Сначала все карточки скрываются
-		const allItems = $('div[data-tag]');
-		allItems.css('display', 'none');
-		//!-----------------------------------------
+			//! Сначала все карточки скрываются
+			const allItems = $('div[data-tag]');
+			allItems.css('display', 'none');
 
-		// если есть активные фильтры, производим фильтрацию
-		if (activeValues.length > 0) {
+			//!-----------------------------------------
 
-			// Фильтруем элементы
-			const filteredItems = allItems.filter((_, item) => {
-				const itemDataTag = $(item).data('tag');
-				return activeValues.every(value => itemDataTag.includes(value));
-			});
+			// если есть активные фильтры, производим фильтрацию
+			if (activeValues.length > 0) {
+				// Если есть активные фильтры, производим фильтрацию
 
-			// Отображаем отфильтрованные элементы
-			setTimeout(function () {
-				filteredItems.slice(0, 6).css('display', 'block');
-			}, 100);
-		}
-		//! Затем обновляем URL с учетом текущих фильтров
-		const params = new URLSearchParams(window.location.search);
-		if (activeValues.length) {
-			params.set('filters', activeValues.join(','));
-			window.history.replaceState({}, '', `${window.location.pathname}?${params}`);
-		} else {
-			params.delete('filters');
-			window.history.replaceState({}, '', window.location.pathname);
-		}
+				// Фильтруем элементы
+				const filteredItems = allItems.filter((_, item) => {
+					const itemDataTag = $(item).data('tag');
+					return activeValues.every(value => itemDataTag.includes(value));
+				});
 
-		// Обработка внешнего вида кнопки сброса
-		if ($('.filters__list-item.active').length > 0) {
-			$('.filters__reset').show();
-		} else {
-			$('.filters__reset').hide();
-		}
+				// Отображаем отфильтрованные элементы
+				filteredItems.css('display', 'block');
+
+
+			} else {
+				// если нет активных фильтов, показываем первые 6 карточек
+				allItems.slice(0, 6).css('display', 'block');
+			}
+
+			// Обработка внешнего вида кнопки сброса и кнопки "Загрузить еще"
+			if ($('.filters__list-item.active').length > 0) {
+				$('.filters__reset').show();
+				$('#loadMore').hide();
+			} else {
+				$('.filters__reset').hide();
+				$('#loadMore').show();
+			}
+
+			//! Затем обновляем URL с учетом текущих фильтров
+			const params = new URLSearchParams(window.location.search);
+
+			if (activeValues.length) {
+				params.set('filters', activeValues.join(','));
+				window.history.replaceState({}, '', `${window.location.pathname}?${params}`);
+			} else {
+				params.delete('filters');
+				window.history.replaceState({}, '', window.location.pathname);
+			}
+
+
+		}, 300); // 1000ms = 1 second delay
+
 	};
 	//!-----------------------------------------
 	// Это код, который изначально загрузит активные фильтры из URL при открытии страницы
@@ -72,6 +86,12 @@ $(document).ready(function () {
 		});
 		// применяем фильтры сразу после загрузки страницы
 		applyFilters();
+	} else {
+		// показываем первые 6 карточек и кнопку "Загрузить еще"
+		const allItems = $('div[data-tag]');
+		allItems.css('display', 'none');
+		allItems.slice(0, 6).css('display', 'block');
+		$('#loadMore').show();
 	}
 
 	// при клике на фильтр
@@ -97,7 +117,6 @@ $(document).ready(function () {
 
 	// Функциональность кнопки "Загрузить еще"
 	$('#loadMore').on('click', function () {
-		const currentlyVisible = $('div[data-tag]:visible').length;
 
 		// Показываем дополнительные карточки товара
 		$('div[data-tag]:hidden').slice(0, 6).css('display', 'block');
