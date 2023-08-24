@@ -16,6 +16,8 @@ $(document).ready(function () {
 	});
 	// Функция фильтрации
 	const applyFilters = function () {
+		// Добавляем заглушку
+		$(".preloader").show();
 		setTimeout(function () {
 
 			// Получаем активные кнопки фильтра
@@ -69,8 +71,9 @@ $(document).ready(function () {
 				window.history.replaceState({}, '', window.location.pathname);
 			}
 
-
-		}, 300); // 1000ms = 1 second delay
+			// Убираем заглушку после загрузки карточек
+			$(".preloader").hide();
+		}, 200); // 1000ms = 1 second delay
 
 	};
 	//!-----------------------------------------

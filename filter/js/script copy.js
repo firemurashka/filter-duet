@@ -88,5 +88,9 @@ $(document).ready(function () {
 	$('.filters__reset').click(function () {
 		$('.filters__list-item.active').removeClass('active');
 		applyFilters();
+		// Все карточки показываются после сброса фильтров
+		const allItems = $('div[data-tag]');
+		allItems.css('display', 'block');
 	});
+
 });
