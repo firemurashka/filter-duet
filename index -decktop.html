@@ -1,0 +1,506 @@
+<div class="filters">
+    <div class="filters__list">
+        <div class="filter-block">
+            <!-- Стиль -->
+            <div class="dropdown" id="dropdown-style">
+                <div class="dropdown__label">
+                    <span>
+                        Стиль
+                    </span>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="9"
+                        viewBox="0 0 14 9"
+                        fill="none"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M6.95703 8.6751L13.5511 2.08105L12.349 0.878967L6.96488 6.2631L1.65422 0.882887L0.444336 2.07713L6.95703 8.6751Z"
+                            fill="#282D3C"
+                        />
+                    </svg>
+                </div>
+                <div class="dropdown-content dropdown-content_style" id="dropdown-content-style">
+                    <button value="modern" class="filters__list-item  modern">
+                        Современный
+                    </button>
+                    <button value="classic" class="filters__list-item  classic">
+                        Классический
+                    </button>
+                </div>
+            </div>
+            <!-- Цвет -->
+            <div class="dropdown" id="dropdown-color">
+                <div class="dropdown__label">
+                    <span>
+                        Цвет
+                    </span>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="9"
+                        viewBox="0 0 14 9"
+                        fill="none"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M6.95703 8.6751L13.5511 2.08105L12.349 0.878967L6.96488 6.2631L1.65422 0.882887L0.444336 2.07713L6.95703 8.6751Z"
+                            fill="#282D3C"
+                        />
+                    </svg>
+                </div>
+                <div class="dropdown-content dropdown-content_color" id="dropdown-content-color">
+                    <button value="bright" class="filters__list-item  bright">
+                        яркая
+                    </button>
+                    <button value="light" class="filters__list-item  light">
+                        светлая
+                    </button>
+                    <button value="dark" class="filters__list-item  dark">
+                        темная
+                    </button>
+                    <button value="woodtexture" class="filters__list-item  woodtexture">
+                        древесная фактура
+                    </button>
+                    <button value="stonetexture" class="filters__list-item  stonetexture">
+                        каменная фактура
+                    </button>
+                </div>
+            </div>
+            <!-- Конфигурация -->
+            <div class="dropdown" id="dropdown-config">
+                <div class="dropdown__label">
+                    <span>
+                        Конфигурация
+                    </span>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="9"
+                        viewBox="0 0 14 9"
+                        fill="none"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M6.95703 8.6751L13.5511 2.08105L12.349 0.878967L6.96488 6.2631L1.65422 0.882887L0.444336 2.07713L6.95703 8.6751Z"
+                            fill="#282D3C"
+                        />
+                    </svg>
+                </div>
+                <div class="dropdown-content dropdown-content_config" id="dropdown-content-config">
+                    <button value="straight" class="filters__list-item  straight">
+                        Прямая
+                    </button>
+                    <button value="angular" class="filters__list-item  angular">
+                        Угловая
+                    </button>
+                    <button value="figurative" class="filters__list-item  figurative">
+                        П-образная
+                    </button>
+                    <button value="island" class="filters__list-item  island">
+                        С островом
+                    </button>
+                    <button value="bar" class="filters__list-item  bar">
+                        С барной стойкой
+                    </button>
+                </div>
+            </div>
+            <!-- Дизайн -->
+            <div class="dropdown" id="dropdown-design">
+                <div class="dropdown__label">
+                    <span>
+                        Дизайн
+                    </span>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="9"
+                        viewBox="0 0 14 9"
+                        fill="none"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M6.95703 8.6751L13.5511 2.08105L12.349 0.878967L6.96488 6.2631L1.65422 0.882887L0.444336 2.07713L6.95703 8.6751Z"
+                            fill="#282D3C"
+                        />
+                    </svg>
+                </div>
+                <div class="dropdown-content dropdown-content_design" id="dropdown-content-design">
+                    <button value="withhandles" class="filters__list-item  withhandles">
+                        с ручками
+                    </button>
+                    <button value="withouthandles" class="filters__list-item  withouthandles">
+                        без ручек
+                    </button>
+                    <button value="mezzanines" class="filters__list-item  mezzanines">
+                        с антресолями
+                    </button>
+                    <button value="backlit" class="filters__list-item backlit">
+                        с подсветкой
+                    </button>
+                </div>
+            </div>
+            <button class="filters__btn-form filters__reset">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="10"
+                    height="10"
+                    viewBox="0 0 10 10"
+                    fill="none"
+                >
+                    <path d="M1.02075 9L8.90677 1.07247" stroke="#8C94A8" stroke-linecap="round"/>
+                    <path d="M1.02075 9L8.90677 1.07247" stroke="#8C94A8" stroke-linecap="round"/>
+                    <path d="M1.02075 9L8.90677 1.07247" stroke="#8C94A8" stroke-linecap="round"/>
+                    <path d="M1 0.825623L9.06567 8.5703" stroke="#8C94A8" stroke-linecap="round"/>
+                    <path d="M1 0.825623L9.06567 8.5703" stroke="#8C94A8" stroke-linecap="round"/>
+                    <path d="M1 0.825623L9.06567 8.5703" stroke="#8C94A8" stroke-linecap="round"/>
+                </svg>
+                <span>Сбросить фильтр</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="preloader">
+    <svg
+        class="preloader__image"
+        role="img"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 512 512"
+    >
+        <path fill="currentColor" d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z"></path>
+    </svg>
+</div>
+<style>
+				.filter-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 30px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown__label {
+  position: relative;
+  z-index: 11;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-radius: 30px;
+  border-radius: 30px;
+  border: 1px solid #8C94A8;
+  width: 236px;
+  height: 60px;
+  padding: 19.5px 25px;
+  font-size: 16px;
+  font-weight: 400;
+  background-color: #fff;
+}
+
+.dropdown__label:hover {
+  border: 1px solid #013C9B;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 100%;
+  z-index: 2;
+  left: 0;
+  border-radius: 30px;
+  border: 1px solid #8C94A8;
+  background: #FFF;
+  padding: 71px 0px 24px;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.dropdown-content_style {
+  bottom: -100px;
+}
+
+.dropdown-content_color {
+  bottom: -209px;
+}
+
+.dropdown-content_config {
+  bottom: -209px;
+}
+
+.dropdown-content_design {
+  bottom: -173px;
+}
+
+/* фильтр */
+.filters__list-subtitle {
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 115%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #013c9b;
+  margin: 35px 0 25px;
+}
+
+.filters__list-wrap {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 22px;
+}
+
+.filters__list-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 7px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 2px 24px;
+}
+
+.filters__list-item:not(:last-child) {
+  margin: 0px 0px 13px 0px;
+}
+
+.filters__list-item:hover {
+  background: #E4EDFC;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.filters__list-item::before {
+  content: "";
+  border-radius: 3px;
+  background: #fff;
+  width: 17px;
+  height: 17px;
+  border: 1px solid #8C94A8;
+}
+
+.filters__list-item.active.filters__list-item::before {
+  background: url("https://kuhniduet.ru/images/catalog/arrow.png") center center no-repeat #013C9B;
+}
+
+.filters__reset {
+  color: #8C94A8;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: #fff;
+  display: none;
+  white-space: nowrap;
+}
+
+.filters__reset svg {
+  margin: 0px 8px 0px 0px;
+  width: 8px;
+  height: 8px;
+}
+
+.filters__reset.filters__list-item.active {
+  display: block;
+}
+
+ul.el-nav.uk-margin.uk-subnav.uk-subnav-pill {
+  display: none !important;
+}
+
+@media screen and (max-width: 1580px) {
+  .filter-block {
+    gap: 10px;
+  }
+  .dropdown__label {
+    font-size: 14px;
+  }
+  .filters__list-item {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .filters__reset span {
+    display: none;
+  }
+  .filters__reset svg {
+    margin: 0px 0px 0px 0px;
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .dropdown__label {
+    width: 180px;
+  }
+  .filters__list-item {
+    padding: 2px 10px;
+  }
+}
+</style>
+<script>
+	$(document).ready(function () {
+	// Когда кликаем по dropdown
+	$(".dropdown").click(function (e) {
+		e.stopPropagation();
+
+		// скрываем все открытые списки
+		$(".dropdown-content").hide();
+
+		// показываем содержимое выбранного списка
+		$(this).find(".dropdown-content").show();
+	});
+
+	// Когда кликаем в любом месте документа, закрываем все списки
+	$(document).click(function () {
+		$(".dropdown-content").hide();
+	});
+	// Функция фильтрации
+	const applyFilters = function () {
+		// Добавляем заглушку
+		$(".preloader").show();
+		setTimeout(function () {
+
+			// Получаем активные кнопки фильтра
+			const activeButtons = $('.filters__list-item.active');
+
+			// Получаем их значения
+			const activeValues = activeButtons.length > 0 ? Array.from(activeButtons).map(button => button.value) : [];
+
+			//! Сначала все карточки скрываются
+			const allItems = $('div[data-tag]');
+			allItems.css('display', 'none');
+
+			//!-----------------------------------------
+
+			// если есть активные фильтры, производим фильтрацию
+			if (activeValues.length > 0) {
+				// Если есть активные фильтры, производим фильтрацию
+
+				// Фильтруем элементы
+				const filteredItems = allItems.filter((_, item) => {
+					const itemDataTag = $(item).data('tag');
+					return activeValues.every(value => itemDataTag.includes(value));
+				});
+
+				// Отображаем отфильтрованные элементы
+				filteredItems.css('display', 'block');
+
+
+			} else {
+				// если нет активных фильтов, показываем первые 6 карточек
+				allItems.slice(0, 6).css('display', 'block');
+			}
+
+			// Обработка внешнего вида кнопки сброса и кнопки "Загрузить еще"
+			if ($('.filters__list-item.active').length > 0) {
+				$('.filters__reset').show();
+				$('#loadMore').hide();
+			} else {
+				$('.filters__reset').hide();
+				$('#loadMore').show();
+			}
+
+			//! Затем обновляем URL с учетом текущих фильтров
+			const params = new URLSearchParams(window.location.search);
+
+			if (activeValues.length) {
+				params.set('filters', activeValues.join(','));
+				window.history.replaceState({}, '', `${window.location.pathname}?${params}`);
+			} else {
+				params.delete('filters');
+				window.history.replaceState({}, '', window.location.pathname);
+			}
+
+			// Убираем заглушку после загрузки карточек
+			$(".preloader").hide();
+		}, 200); // 1000ms = 1 second delay
+
+	};
+	//!-----------------------------------------
+	// Это код, который изначально загрузит активные фильтры из URL при открытии страницы
+	const params = new URLSearchParams(window.location.search);
+	const filters = params.get('filters');
+
+	// При наличии параметров в URL, активируем соответствующие фильтры
+	if (filters) {
+		const filtersArray = filters.split(',');
+		filtersArray.forEach(filter => {
+			$(`.filters__list-item[value='${filter}']`).addClass('active');
+		});
+		// применяем фильтры сразу после загрузки страницы
+		applyFilters();
+	} else {
+		// показываем первые 6 карточек и кнопку "Загрузить еще"
+		const allItems = $('div[data-tag]');
+		allItems.css('display', 'none');
+		allItems.slice(0, 6).css('display', 'block');
+		$('#loadMore').show();
+	}
+
+	// при клике на фильтр
+	$('.filters__list-item').click(function (e) {
+		e.preventDefault();
+		$(this).toggleClass('active');
+		applyFilters();
+		// корректируем время задержки по мере необходимости
+		setTimeout(() => {
+			$(".dropdown-content").hide();
+		}, 100);
+	});
+
+	// при клике на кнопку сброса
+	$('.filters__reset').click(function () {
+		$('.filters__list-item.active').removeClass('active');
+		applyFilters();
+		// Нужно показать первые 6 карточек после сброса фильтров
+		const allItems = $('div[data-tag]');
+		allItems.css('display', 'none');
+		allItems.slice(0, 6).css('display', 'block');
+	});
+
+	// Функциональность кнопки "Загрузить еще"
+	$('#loadMore').on('click', function () {
+
+		// Показываем дополнительные карточки товара
+		$('div[data-tag]:hidden').slice(0, 6).css('display', 'block');
+
+		// Проверка, если все карточки уже загружены
+		if ($('div[data-tag]:hidden').length == 0) {
+			// Если все карточки загружены, скрываем кнопку
+			$('#loadMore').hide();
+		}
+	});
+
+});
+</script>
