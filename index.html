@@ -12,101 +12,118 @@
     <body>
         <div class="wrapper">
             <main class="page">
-              
-					 <div class="filters">
-						<div class="filters__list">
-							 <div class="filter-block">
-								  <!-- Стиль -->
-								  <div id="style" class="filter-title">
-										<div>
+                <div class="filters">
+                    <div class="filters__list">
+                        <div class="filter-block">
+                            <!-- Стиль -->
+                            <div id="style" class="filter-style">
+                                <div class="filter-title">
+                                    <span>
+                                        Стиль
+                                    </span>
+                                </div>
+                                <div id="style-content" class="filters__column">
+                                    <button value="modern" class="filters__list-item  modern">
+                                        Современный
+                                    </button>
+                                    <button value="classic" class="filters__list-item  classic">
+                                        Классический
+                                    </button>
+                                </div>
+                            </div>
+									 <!-- Дизайн -->
+                            <div id="style" class="filter-style">
+										<div class="filter-title">
 											 <span>
-												  Стиль
+												  Дизайн
 											 </span>
 										</div>
-										<div id="style-content" class="filters__list">
-											 <button value="modern" class="filters__list-item  modern">
-												  Современный
-											 </button>
-											 <button value="classic" class="filters__list-item  classic">
-												  Классический
-											 </button>
-										</div>
-								  </div>
-								  <!-- Цвет -->
-								  <div id="style" class="filter-title">
-										<div>
-											 <span>
-												Цвет
-											 </span>
-										</div>
-										<div id="style-content" class="filters__list">
-											 <button value="bright" class="filters__list-item  bright">
-												яркая
-											 </button>
-											 <button value="light" class="filters__list-item  light">
-												светлая
-											 </button>
-											 <button value="dark" class="filters__list-item  dark">
-												темная
-											 </button>
-											 <button value="woodtexture" class="filters__list-item  woodtexture">
-												древесная фактура
-											 </button>
-											 <button value="stonetexture" class="filters__list-item  stonetexture">
-												каменная фактура
-											 </button>
-										</div>
-								  </div>
-								  <!-- Конфигурация -->
-								  <div id="style" class="filter-title">
-										<div>
-											 <span>
-												Конфигурация
-											 </span>
-										</div>
-										<div id="style-content" class="filters__list">
-											 <button value="straight" class="filters__list-item  straight">
-												Прямая
-											 </button>
-											 <button value="angular" class="filters__list-item  angular">
-												Угловая
-											 </button>
-											 <button value="figurative" class="filters__list-item  figurative">
-												П-образная
-											 </button>
-											 <button value="island" class="filters__list-item  island">
-												С островом
-											 </button>
-											 <button value="bar" class="filters__list-item  bar">
-												С барной стойкой
-											 </button>
-										</div>
-								  </div>
-								  <!-- Дизайн -->
-								  <div id="style" class="filter-title">
-										<div>
-											 <span>
-												Дизайн
-											 </span>
-										</div>
-										<div id="style-content" class="filters__list">
+										<div id="style-content" class="filters__column">
 											 <button value="withhandles" class="filters__list-item  withhandles">
-												с ручками
+												  с ручками
 											 </button>
 											 <button value="withouthandles" class="filters__list-item  withouthandles">
-												без ручек
+												  без ручек
 											 </button>
 											 <button value="mezzanines" class="filters__list-item  mezzanines">
-												с антресолями
+												  с антресолями
 											 </button>
 											 <button value="backlit" class="filters__list-item  backlit">
-												с подсветкой
+												  с подсветкой
 											 </button>
 										</div>
 								  </div>
-							 </div>
-						</div>
-				  </div>
+                        
+                            <!-- Конфигурация -->
+                            <div id="style" class="filter-style">
+                                <div class="filter-title">
+                                    <span>
+                                        Конфигурация
+                                    </span>
+                                </div>
+                                <div id="style-content" class="filters__column">
+                                    <button value="straight" class="filters__list-item  straight">
+                                        Прямая
+                                    </button>
+                                    <button value="angular" class="filters__list-item  angular">
+                                        Угловая
+                                    </button>
+                                    <button value="figurative" class="filters__list-item  figurative">
+                                        П-образная
+                                    </button>
+                                    <button value="island" class="filters__list-item  island">
+                                        С островом
+                                    </button>
+                                    <button value="bar" class="filters__list-item  bar">
+                                        С барной стойкой
+                                    </button>
+                                </div>
+                            </div>
+                                <!-- Цвет -->
+										  <div id="style" class="filter-style">
+											<div class="filter-title">
+												 <span>
+													  Цвет
+												 </span>
+											</div>
+											<div id="style-content" class="filters__column">
+												 <button value="bright" class="filters__list-item  bright">
+													  яркая
+												 </button>
+												 <button value="light" class="filters__list-item  light">
+													  светлая
+												 </button>
+												 <button value="dark" class="filters__list-item  dark">
+													  темная
+												 </button>
+												 <button value="woodtexture" class="filters__list-item  woodtexture">
+													  древесная фактура
+												 </button>
+												 <button value="stonetexture" class="filters__list-item  stonetexture">
+													  каменная фактура
+												 </button>
+											</div>
+									  </div>
+                        </div>
+                        <button class="filters__btn-form filters__reset">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="10"
+                                height="10"
+                                viewBox="0 0 10 10"
+                                fill="none"
+                            >
+                                <path d="M1.02075 9L8.90677 1.07247" stroke="#8C94A8" stroke-linecap="round"/>
+                                <path d="M1.02075 9L8.90677 1.07247" stroke="#8C94A8" stroke-linecap="round"/>
+                                <path d="M1.02075 9L8.90677 1.07247" stroke="#8C94A8" stroke-linecap="round"/>
+                                <path d="M1 0.825623L9.06567 8.5703" stroke="#8C94A8" stroke-linecap="round"/>
+                                <path d="M1 0.825623L9.06567 8.5703" stroke="#8C94A8" stroke-linecap="round"/>
+                                <path d="M1 0.825623L9.06567 8.5703" stroke="#8C94A8" stroke-linecap="round"/>
+                            </svg>
+                            <span>Сбросить фильтр</span>
+                        </button>
+                    </div>
+                </div>
                 <div class="preloader">
                     <svg
                         class="preloader__image"
@@ -117,6 +134,8 @@
                         <path fill="currentColor" d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z"></path>
                     </svg>
                 </div>
+                <style>
+
             </main>
             <footer class="footer"></footer>
         </div>
